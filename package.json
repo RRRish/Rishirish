@@ -1,8 +1,8 @@
 {
     "page": {
-        "title": "Welcome to Solitech",
+        "title": "Welcome to TechSolutions",
         "header": {
-            "title": "Welcome to Solitech"
+            "title": "Welcome to TechSolutions"
         },
         "nav": [
             {
@@ -22,7 +22,7 @@
             {
                 "id": "welcome",
                 "class": "welcome-section",
-                "title": "Welcome to Solitech",
+                "title": "Welcome to TechSolutions",
                 "content": "Your partner in innovative IT solutions."
             },
             {
@@ -48,5 +48,6 @@
         "footer": {
             "content": "&copy; 2024 TechSolutions. All rights reserved."
         }
-    }
+    },
+    "startScript": "window.addEventListener('DOMContentLoaded', (event) => {\n    const data = {\n        title: 'Welcome to TechSolutions',\n        header: {\n            title: 'Welcome to TechSolutions'\n        },\n        nav: [\n            { text: 'Home', href: '#welcome' },\n            { text: 'Services', href: '#services' },\n            { text: 'Contact', href: '#contact' }\n        ],\n        sections: [\n            { id: 'welcome', class: 'welcome-section', title: 'Welcome to TechSolutions', content: 'Your partner in innovative IT solutions.' },\n            { id: 'services', class: 'services-section', title: 'Our Services', services: [\n                { title: 'Web Development', description: 'Building responsive and modern websites.' },\n                { title: 'Mobile App Development', description: 'Creating user-friendly mobile applications.' },\n                { title: 'Cloud Solutions', description: 'Offering scalable and secure cloud services.' }\n            ]}\n        ],\n        footer: {\n            content: '&copy; 2024 TechSolutions. All rights reserved.'\n        }\n    };\n\n    document.title = data.title;\n\n    const header = document.createElement('header');\n    header.innerHTML = `<h1>${data.header.title}</h1>`;\n    document.body.appendChild(header);\n\n    const nav = document.createElement('nav');\n    data.nav.forEach(link => {\n        const a = document.createElement('a');\n        a.href = link.href;\n        a.textContent = link.text;\n        nav.appendChild(a);\n    });\n    document.body.appendChild(nav);\n\n    data.sections.forEach(section => {\n        const sec = document.createElement('section');\n        sec.id = section.id;\n        sec.className = section.class;\n        const h2 = document.createElement('h2');\n        h2.textContent = section.title;\n        sec.appendChild(h2);\n        if (section.content) {\n            const p = document.createElement('p');\n            p.textContent = section.content;\n            sec.appendChild(p);\n        }\n        if (section.services) {\n            const servicesDiv = document.createElement('div');\n            servicesDiv.className = 'services';\n            section.services.forEach(service => {\n                const serviceDiv = document.createElement('div');\n                serviceDiv.className = 'service';\n                const h3 = document.createElement('h3');\n                h3.textContent = service.title;\n                const p = document.createElement('p');\n                p.textContent = service.description;\n                serviceDiv.appendChild(h3);\n                serviceDiv.appendChild(p);\n                servicesDiv.appendChild(serviceDiv);\n            });\n            sec.appendChild(servicesDiv);\n        }\n        document.body.appendChild(sec);\n    });\n\n    const footer = document.createElement('footer');\n    footer.innerHTML = data.footer.content;\n    document.body.appendChild(footer);\n});"
 }
