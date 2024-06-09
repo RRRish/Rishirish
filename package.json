@@ -1,0 +1,52 @@
+{
+    "page": {
+        "title": "Welcome to Solitech",
+        "header": {
+            "title": "Welcome to Solitech"
+        },
+        "nav": [
+            {
+                "text": "Home",
+                "href": "#welcome"
+            },
+            {
+                "text": "Services",
+                "href": "#services"
+            },
+            {
+                "text": "Contact",
+                "href": "#contact"
+            }
+        ],
+        "sections": [
+            {
+                "id": "welcome",
+                "class": "welcome-section",
+                "title": "Welcome to Solitech",
+                "content": "Your partner in innovative IT solutions."
+            },
+            {
+                "id": "services",
+                "class": "services-section",
+                "title": "Our Services",
+                "services": [
+                    {
+                        "title": "Web Development",
+                        "description": "Building responsive and modern websites."
+                    },
+                    {
+                        "title": "Mobile App Development",
+                        "description": "Creating user-friendly mobile applications."
+                    },
+                    {
+                        "title": "Cloud Solutions",
+                        "description": "Offering scalable and secure cloud services."
+                    }
+                ]
+            }
+        ],
+        "footer": {
+            "content": "&copy; 2024 TechSolutions. All rights reserved."
+        }
+    }
+}
