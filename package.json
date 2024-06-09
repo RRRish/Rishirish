@@ -4,7 +4,7 @@
   "description": "A welcome page for TechSolutions IT company",
   "main": "index.html",
   "scripts": {
-    "start": "http-server ."
+    "start": "node index2.html"
   },
   "author": "Your Name",
   "license": "ISC",
