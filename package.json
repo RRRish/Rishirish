@@ -1,53 +1,64 @@
 {
-    "page": {
-        "title": "Welcome to Solitech",
-        "header": {
-            "title": "Welcome to Solitech"
-        },
-        "nav": [
-            {
-                "text": "Home",
-                "href": "#welcome"
-            },
-            {
-                "text": "Services",
-                "href": "#services"
-            },
-            {
-                "text": "Contact",
-                "href": "#contact"
-            }
-        ],
-        "sections": [
-            {
-                "id": "welcome",
-                "class": "welcome-section",
-                "title": "Welcome to TechSolutions",
-                "content": "Your partner in innovative IT solutions."
-            },
-            {
-                "id": "services",
-                "class": "services-section",
-                "title": "Our Services",
-                "services": [
-                    {
-                        "title": "Web Development",
-                        "description": "Building responsive and modern websites."
-                    },
-                    {
-                        "title": "Mobile App Development",
-                        "description": "Creating user-friendly mobile applications."
-                    },
-                    {
-                        "title": "Cloud Solutions",
-                        "description": "Offering scalable and secure cloud services."
-                    }
-                ]
-            }
-        ],
-        "footer": {
-            "content": "&copy; 2024 TechSolutions. All rights reserved."
-        }
+  "name": "techsolutions-welcome-page",
+  "version": "1.0.0",
+  "description": "A welcome page for TechSolutions IT company",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "htmlContent": {
+    "doctype": "html",
+    "lang": "en",
+    "head": {
+      "charset": "UTF-8",
+      "viewport": "width=device-width, initial-scale=1.0",
+      "title": "Welcome to TechSolutions",
+      "style": "body { font-family: Arial, sans-serif; margin: 0; padding: 0; } header { background-color: #333; color: white; padding: 10px 0; text-align: center; } nav { display: flex; justify-content: center; background-color: #444; } nav a { color: white; padding: 14px 20px; text-decoration: none; text-align: center; } nav a:hover { background-color: #ddd; color: black; } .welcome-section { padding: 50px; text-align: center; background-color: #f4f4f4; } .services-section { padding: 50px; background-color: #fff; } .services-section h2 { text-align: center; } .services { display: flex; justify-content: space-around; margin-top: 20px; } .service { flex: 1; margin: 10px; padding: 20px; background-color: #eee; border-radius: 8px; text-align: center; } footer { background-color: #333; color: white; text-align: center; padding: 10px 0; position: fixed; width: 100%; bottom: 0; }"
     },
-    "startScript": "window.addEventListener('DOMContentLoaded', (event) => {\n    const data = {\n        title: 'Welcome to TechSolutions',\n        header: {\n            title: 'Welcome to TechSolutions'\n        },\n        nav: [\n            { text: 'Home', href: '#welcome' },\n            { text: 'Services', href: '#services' },\n            { text: 'Contact', href: '#contact' }\n        ],\n        sections: [\n            { id: 'welcome', class: 'welcome-section', title: 'Welcome to TechSolutions', content: 'Your partner in innovative IT solutions.' },\n            { id: 'services', class: 'services-section', title: 'Our Services', services: [\n                { title: 'Web Development', description: 'Building responsive and modern websites.' },\n                { title: 'Mobile App Development', description: 'Creating user-friendly mobile applications.' },\n                { title: 'Cloud Solutions', description: 'Offering scalable and secure cloud services.' }\n            ]}\n        ],\n        footer: {\n            content: '&copy; 2024 TechSolutions. All rights reserved.'\n        }\n    };\n\n    document.title = data.title;\n\n    const header = document.createElement('header');\n    header.innerHTML = `<h1>${data.header.title}</h1>`;\n    document.body.appendChild(header);\n\n    const nav = document.createElement('nav');\n    data.nav.forEach(link => {\n        const a = document.createElement('a');\n        a.href = link.href;\n        a.textContent = link.text;\n        nav.appendChild(a);\n    });\n    document.body.appendChild(nav);\n\n    data.sections.forEach(section => {\n        const sec = document.createElement('section');\n        sec.id = section.id;\n        sec.className = section.class;\n        const h2 = document.createElement('h2');\n        h2.textContent = section.title;\n        sec.appendChild(h2);\n        if (section.content) {\n            const p = document.createElement('p');\n            p.textContent = section.content;\n            sec.appendChild(p);\n        }\n        if (section.services) {\n            const servicesDiv = document.createElement('div');\n            servicesDiv.className = 'services';\n            section.services.forEach(service => {\n                const serviceDiv = document.createElement('div');\n                serviceDiv.className = 'service';\n                const h3 = document.createElement('h3');\n                h3.textContent = service.title;\n                const p = document.createElement('p');\n                p.textContent = service.description;\n                serviceDiv.appendChild(h3);\n                serviceDiv.appendChild(p);\n                servicesDiv.appendChild(serviceDiv);\n            });\n            sec.appendChild(servicesDiv);\n        }\n        document.body.appendChild(sec);\n    });\n\n    const footer = document.createElement('footer');\n    footer.innerHTML = data.footer.content;\n    document.body.appendChild(footer);\n});"
+    "body": {
+      "header": {
+        "h1": "Welcome to TechSolutions"
+      },
+      "nav": [
+        { "text": "Home", "href": "#welcome" },
+        { "text": "Services", "href": "#services" },
+        { "text": "Contact", "href": "#contact" }
+      ],
+      "sections": [
+        {
+          "id": "welcome",
+          "class": "welcome-section",
+          "h2": "Welcome to TechSolutions",
+          "p": "Your partner in innovative IT solutions."
+        },
+        {
+          "id": "services",
+          "class": "services-section",
+          "h2": "Our Services",
+          "services": [
+            {
+              "h3": "Web Development",
+              "p": "Building responsive and modern websites."
+            },
+            {
+              "h3": "Mobile App Development",
+              "p": "Creating user-friendly mobile applications."
+            },
+            {
+              "h3": "Cloud Solutions",
+              "p": "Offering scalable and secure cloud services."
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "p": "&copy; 2024 TechSolutions. All rights reserved."
+      }
+    }
+  }
 }
